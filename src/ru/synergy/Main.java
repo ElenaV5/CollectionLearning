@@ -25,5 +25,30 @@ public class Main {
         }
         catsList.add(new Cat("Гипопотам")); //добавляется только в ArrayList
         System.out.println(catsList.toString());
+
+        catsList.remove(1); //удаление элемента по индексу 1 (Бегемот)
+        System.out.println(catsList.toString());
+
+        Cat cat = catsList.get(0);
+        System.out.print(cat);
+        System.out.println(" Индекс кота: " + catsList.indexOf(cat)); //0
+
+        catsList.add(2, cat); //если поставить индекс больше, чем установлен, то будет ошибка по индексу
+        System.out.println(catsList.toString()); //не заменяет, а ставить плюсом
+
+        catsList.set(2, new Cat("Меня сюда вставили")); //заменяет одного кота на другово
+        System.out.println(catsList.toString());
+
+        //catsList.removeAll(catsList); //удаление всех элементов списка
+        //System.out.println(catsList.toString()); //[]
+
+        catsList.removeAll(Arrays.asList(cat, catsList.get(3))); //удаляет значение массива под индексом 3
+        System.out.println(catsList.toString());
+
+        //cats = catsList.toArray(); //вернется лист котов (по сути не используется)
+
+        System.out.println(catsList.size()); // размер листа - 3
+
+
     }
 }

@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
@@ -49,6 +50,22 @@ public class Main {
 
         System.out.println(catsList.size()); // размер листа - 3
 
+        //LinkedList
+        String str1 = new String("Hello World");
+        String str2 = new String("My name is Elena");
+        String str3 = new String("I love Java");
+
+        LinkedList<String> elenaBio = new LinkedList();
+        elenaBio.add(str1);
+        elenaBio.add(str2);
+        elenaBio.add(str3);
+
+        System.out.println(elenaBio); //[Hello World, My name is Elena, I love Java]
+
+        elenaBio.remove(); //удаляет первое значение
+        System.out.println(elenaBio);
+        elenaBio.remove(1); //удаляет значение с индексом 1
+        System.out.println(elenaBio);
 
     }
 }

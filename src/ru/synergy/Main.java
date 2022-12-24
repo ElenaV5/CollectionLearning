@@ -67,5 +67,28 @@ public class Main {
         elenaBio.remove(1); //удаляет значение с индексом 1
         System.out.println(elenaBio);
 
+        //LikedList on practice:
+        LinkedList<Car> cars = new LinkedList<>();
+        Car ferrari = new Car("Ferrari Spider");
+        Car bugatti = new Car("Bugatti Veyron");
+        Car mercedes = new Car("Mercedes Benz");
+
+        cars.addAll(Arrays.asList(ferrari, bugatti, mercedes));
+        System.out.println(cars);
+
+        cars.addFirst(new Car ("Ford GT300")); //ресурсоемкая операция в массивах
+        System.out.println(cars); //добавится в начало массива
+
+        cars.addLast(new Car("Fiat S400")); //дабавление в конец массива
+        System.out.println(cars);
+
+        System.out.println(cars.pollFirst()); //операция вытаскивание из массива
+        System.out.println(cars); //выводится без первого элемента
+
+        System.out.println(cars.pollLast()); //операция вытаскивание из массива
+        System.out.println(cars); //выводится без последнего элемента
+
+        //cars.toArray(); //получаем объекты!
+
     }
 }

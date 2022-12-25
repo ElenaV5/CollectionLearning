@@ -1,10 +1,7 @@
 package ru.synergy;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -89,6 +86,29 @@ public class Main {
         System.out.println(cars); //выводится без последнего элемента
 
         //cars.toArray(); //получаем объекты!
+
+        //ArrayList vs LinkedList - замерим время работы обоих листов
+        List<Integer> list = new LinkedList();
+        for(int i = 0; i < 5000000; i++){
+            list.add(new Integer(i));
+        }
+        long start = System.currentTimeMillis();
+        for(int i=0; i < 100; i++){
+            list.add(2000000, Integer.MAX_VALUE);
+        }
+        System.out.println("Время работы для LinkedList (миллисекунды): " + (System.currentTimeMillis() - start));
+        //2523
+
+        list = new ArrayList<>();
+        for(int i = 0; i < 5000000; i++){
+            list.add(new Integer(i));
+        }
+        start = System.currentTimeMillis();
+        for(int i=0; i < 100; i++){
+            list.add(2000000, Integer.MAX_VALUE);
+        }
+        System.out.println("Время работы для ArrayList (миллисекунды): " + (System.currentTimeMillis() - start));
+        //2344
 
     }
 }

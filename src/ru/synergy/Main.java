@@ -46,6 +46,7 @@ public class Main {
         //cats = catsList.toArray(); //вернется лист котов (по сути не используется)
 
         System.out.println(catsList.size()); // размер листа - 3
+        catsList.add(new Cat("Гипопотам"));
 
         //LinkedList
         String str1 = new String("Hello World");
@@ -88,7 +89,7 @@ public class Main {
         //cars.toArray(); //получаем объекты!
 
         //ArrayList vs LinkedList - замерим время работы обоих листов
-        List<Integer> list = new LinkedList();
+/*        List<Integer> list = new LinkedList();
         for(int i = 0; i < 5000000; i++){
             list.add(new Integer(i));
         }
@@ -109,6 +110,25 @@ public class Main {
         }
         System.out.println("Время работы для ArrayList (миллисекунды): " + (System.currentTimeMillis() - start));
         //2344
+*/
+        //set - коллекции
+        Set<String> states = new HashSet<>();
+        states.add("Germany");
+        states.add("France");
+        states.add("Italy");
+        boolean isAdded = states.add("Italy"); //добавим страну еще раз
+        System.out.println("Is the 2nd Italy added: " + isAdded);
+        System.out.println("Set contains: " + states.size());
+        System.out.println(states);
+        states.add("Russia");
+        System.out.println(states);
+        states.remove("Germany"); //удаление объекта
+        System.out.println(states);
 
+        HashSet<Cat> catsHashSet = new HashSet<>(catsList); //выводит лист с котами
+        System.out.println(catsHashSet);
+
+        TreeSet<Cat> catTreeSet = new TreeSet(catsList);
+        System.out.println(catTreeSet); //сортирует по алфавиту
     }
 }

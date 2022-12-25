@@ -130,5 +130,22 @@ public class Main {
 
         TreeSet<Cat> catTreeSet = new TreeSet(catsList);
         System.out.println(catTreeSet); //сортирует по алфавиту
+
+        //Map-коллекции
+        Map<Integer, String> stateMap = new HashMap<>();
+        stateMap.clear(); //очищает коллекцию
+        stateMap.put(1, "Germany");
+        stateMap.put(2, "Spain");
+        stateMap.put(3, "Italy");
+        stateMap.put(4, "France");
+        String first = stateMap.get(2); //выводит значение под 2 ключом
+        System.out.println(first);
+        System.out.println(stateMap.keySet()); //выводит ключи коллекции
+        stateMap.remove(2); //удаление по ключу
+        stateMap.remove(3, "Itali"); //не удалит, если или ключ или значение не совпадают
+        for(Map.Entry<Integer, String> item : stateMap.entrySet()){
+            System.out.printf("Key: %d | Value: %s \n", item.getKey(), item.getValue());
+        } //выводит все строки коллекции
+
     }
 }
